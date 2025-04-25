@@ -23,6 +23,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "acd2a650-d3ae-4e31-80d8-80d7df69fc50"
+      }
+    },
+    "owner": "hcalarcon"
   }
 }

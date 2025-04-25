@@ -6,12 +6,17 @@ import { Text, View, StyleSheet } from "react-native";
 export default function Visor({ tiempo }) {
   //logica del componente - codigo de js
 
+  const TiempoFormateado = `${Math.floor(tiempo / 60)
+    .toString()
+    .padStart(2, "0")}:${Math.floor(tiempo % 60)
+    .toString()
+    .padStart(2, "0")}`;
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 50, fontWeight: "bold" }}>
         {
           //codigo de js
-          tiempo
+          TiempoFormateado
         }
       </Text>
     </View>

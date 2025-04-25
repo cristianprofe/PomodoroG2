@@ -1,14 +1,21 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
+//importar la funcion
+import playsound from "../utility/playSound";
 
 //tareita: dar estilos al boton
 const Boton = (props) => {
   //logica del componente
+  //importa el sonido
+  const sonido = require("../assets/sound/click.mp3");
 
   const { run, setRun } = props;
   //llamamos togle por que es cambiar en ingles
   const toggleRun = () => {
     setRun(!run);
+    //uso la funcion
+    playsound(sonido);
   };
+
   return (
     <View>
       <Pressable
@@ -16,12 +23,7 @@ const Boton = (props) => {
         style={({ pressed }) => [styles.boton, { opacity: pressed ? 0.5 : 1 }]}
       >
         <Text style={{ fontSize: 25, fontWeight: "bold", textAlign: "center" }}>
-          {
-            //Tarea 2: RENDERIZADO CONDICIONAL
-            //SI RUN ES VERDADERO MOSTRAR EL TEXTO "PARAR" SI ES FALSO MOSTRAR EL TEXTO "INICIAR"
-
-            "boton"
-          }
+          {run ? "Detener" : "Iniciar"}
         </Text>
       </Pressable>
     </View>

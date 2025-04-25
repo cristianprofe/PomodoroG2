@@ -15,7 +15,7 @@ const Tabs = ({ seleccion, setSeleccion }) => {
           style={({ pressed }) => [
             styles.boton,
             { opacity: pressed ? 0.5 : 1 },
-            {},
+            seleccion !== index && { borderColor: "transparent" },
           ]}
           key={index}
           onPress={() => handlerSeleccion(index)}
